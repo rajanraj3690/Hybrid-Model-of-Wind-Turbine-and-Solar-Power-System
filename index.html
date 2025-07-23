@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Model of Wind Turbine and Solar Power System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jsPDF library for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <!-- <h3>हाईवे हाइब्रिड विंड-सोलर पावर सिस्टम</h3> -->
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links-wrapper">
+                    <div class="nav-links">
+                        <button class="nav-link" data-section="welcome">Welcome</button>
+                        <button class="nav-link" data-section="dashboard">होम</button>
+                        <button class="nav-link" data-section="overview">सिस्टम ओवरव्यू</button>
+                        <button class="nav-link" data-section="components">कंपोनेंट्स</button>
+                        <button class="nav-link" data-section="performance">प्रदर्शन डेटा</button>
+                        <button class="nav-link" data-section="energy-flow">एनर्जी फ्लो</button>
+                        <button class="nav-link" data-section="cost-analysis">कॉस्ट एनालिसिस</button>
+                        <button class="nav-link" data-section="implementation">इम्प्लीमेंटेशन</button>
+                    </div>
+                </div>
+                <!-- <button class="btn btn--sm language-toggle">EN/HI</button> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Page Section -->
+    <section id="welcome" class="section active">
+        <div class="container welcome-container" style="background: linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%); border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); padding: 2.5rem 1.5rem; margin-top: 2rem;">
+            <div class="welcome-card" style="background: rgba(255,255,255,0.92); border-radius: 18px; padding: 2rem 1.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+                <h1 class="welcome-title" style="font-size: 2.7rem; font-weight: 800; color: #0a3d62; text-shadow: 1px 2px 8px #b2bec3; letter-spacing: 1px; margin-bottom: 0.5rem;">🌟 Welcome to Our Project Website 🌟</h1>
+                <h2 style="font-size: 1.7rem; font-weight: 700; color: #ff6f00; margin-bottom: 1.2rem;">"The Hybrid  Model of <span style='color:#00b894;'>Wind Turbine</span> and <span style='color:#fdcb6e;'>Solar Power System</span>"</h2>
+                <p class="welcome-powered" style="font-size: 1.1rem; color: #636e72; margin-bottom: 1.2rem;">Powered by <strong style="color:#0984e3;">Rajan Kumar</strong></p>
+                <div class="welcome-school" style="margin-bottom: 1.2rem;">
+                    <h3 style="color: #00b894; font-size: 1.2rem;">School: <span class="highlight" style="color:#d35400;">Udai Pratap Inter College</span></h3>
+                    <h4 style="color: #6c3483; font-size: 1.1rem;">Principal: <span class="highlight" style="color:#00b894;">Dr. Ramesh Pratap Singh</span></h4>
+                </div>
+                <div class="welcome-teachers" style="margin-bottom: 1.2rem;">
+                    <h3 style="color: #fdcb6e; font-size: 1.1rem;">Guided by:</h3>
+                    <div class="teacher-list" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <div class="teacher-card" style="background: #e3f9f6; border-radius: 10px; padding: 1rem; min-width: 160px; box-shadow: 0 2px 8px #b2bec3;">
+                            <h4 style="color: #00b894;">Arun Kumar Sir</h4>
+                            <p style="color: #636e72;">Physics Teacher<br><span style="color:#fdcb6e;">Expert & Excellent Educator</span></p>
+                        </div>
+                        <div class="teacher-card" style="background: #fff6e0; border-radius: 10px; padding: 1rem; min-width: 160px; box-shadow: 0 2px 8px #b2bec3;">
+                            <h4 style="color: #fdcb6e;">Raj Kumar Sir</h4>
+                            <p style="color: #636e72;">Physics Teacher<br><span style="color:#00b894;">Expert & Dedicated Mentor</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-message" style="margin-bottom: 2rem;">
+                    <p style="font-size: 1.15rem; color: #222f3e; background: #f1f2f6; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 4px #b2bec3;">We are delighted to present our innovative project that combines <span style="color:#00b894; font-weight:600;">wind</span> and <span style="color:#fdcb6e; font-weight:600;">solar energy</span> for a sustainable future. <br>Explore the website to learn more about the model, its components, performance, and impact!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <div class="hero">
+                <h1 class="hero-title">हाईवे हाइब्रिड विंड and सोलर पावर सिस्टम</h1>
+                <p class="hero-subtitle">Interactive Project Model & Data Visualization</p>
+                <div class="hero-description">
+                    <p>यह एक innovative renewable energy solution है जो highway divider पर vertical axis wind turbines और solar panels का combination है। जो  vehicles की wind energy और Sun  की   solar energy दोनों का उपयोग करके electricity बनाता है।  इसके द्वारा बनाई गई electricity को हम  store  करके रात में street lights  चलने के लिए उपयोग कर सकते  है।   </p>
+                    <p>This is an innovative renewable energy solution that combines vertical-axis wind turbines with solar panels on highway dividers. It produces electricity using both the wind energy of vehicles and the solar energy of the Sun. We can store the electricity produced by this and use it to run street lights at night.</p>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>24/7 Energy Generation</h3>
+                    <p>निरंतर ऊर्जा उत्पादन</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Carbon Neutral</h3>
+                    <p>पर्यावरण अनुकूल समाधान</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost Effective</h3>
+                    <p>लागत प्रभावी</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Scalable Solution</h3>
+                    <p>स्केलेबल समाधान</p>
+                </div>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-value">16.0 kWh</div>
+                    <div class="stat-label">दैनिक उत्पादन</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12.0 kWh</div>
+                    <div class="stat-label">दैनिक उपभोग</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4.0 kWh</div>
+                    <div class="stat-label">अतिरिक्त ऊर्जा</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">78-82%</div>
+                    <div class="stat-label">सिस्टम दक्षता</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Overview -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>सिस्टम ओवरव्यू</h2>
+            <div class="overview-content">
+                <div class="system-visual">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/85792a0b-5588-4195-8087-dc888c1be2ae.png" alt="3D model of highway hybrid wind-solar power system" class="system-image">
+                    <div class="interactive-points">
+                        <button class="point point-turbine" data-component="turbine" style="top: 30%; left: 25%;">⚡</button>
+                        <button class="point point-solar" data-component="solar" style="top: 40%; left: 60%;">☀️</button>
+                        <button class="point point-battery" data-component="battery" style="top: 70%; left: 45%;">🔋</button>
+                        <button class="point point-lights" data-component="lights" style="top: 20%; left: 75%;">💡</button>
+                    </div>
+                </div>
+                <div class="system-info">
+                    <div class="component-details" id="component-info">
+                        <h3>सिस्टम घटक चुनें</h3>
+                        <p>विस्तृत जानकारी के लिए छवि पर interactive points पर क्लिक करें।</p>
+                    </div>
+                    <div class="wind-animation">
+                        <h4>Wind Flow Simulation</h4>
+                        <div class="wind-flow-container">
+                            <div class="vehicle">🚗</div>
+                            <div class="wind-particles"></div>
+                            <div class="turbine-icon">🌪️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="section">
+        <div class="container">
+            <h2>सिस्टम कंपोनेंट्स</h2>
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-header">
+                        <h3>वर्टिकल एक्सिस विंड टर्बाइन</h3>
+                        <div class="component-icon">🌪️</div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-row">
+                            <span class="spec-label">Capacity:</span>
+                            <span class="spec-value">0.5kW each</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Quantity:</span>
+                            <span class="spec-value">4 units</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Max RPM:</span>
+                            <span class="spec-value">750</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Cut-in Speed:</span>
+                            <span class="spec-value">3 m/s</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Efficiency:</span>
+                            <span class="spec-value">25-35%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <h3>सोलर पैनल</h3>
+                        <div class="component-icon">☀️</div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-row">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Monocrystalline</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Capacity:</span>
+                            <span class="spec-value">400W each</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Quantity:</span>
+                            <span class="spec-value">6 panels</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Total Capacity:</span>
+                            <span class="spec-value">2.4kW</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Efficiency:</span>
+                            <span class="spec-value">20-22%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <h3>बैटरी सिस्टम</h3>
+                        <div class="component-icon">🔋</div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-row">
+                            <span class="spec-label">Type:</span>
+                            <span class="spec-value">Lithium-ion</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Capacity:</span>
+                            <span class="spec-value">500Ah @ 48V</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Total Energy:</span>
+                            <span class="spec-value">24kWh</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Backup Duration:</span>
+                            <span class="spec-value">18 hours</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Efficiency:</span>
+                            <span class="spec-value">90-95%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <h3>LED स्ट्रीट लाइट्स</h3>
+                        <div class="component-icon">💡</div>
+                    </div>
+                    <div class="component-specs">
+                        <div class="spec-row">
+                            <span class="spec-label">Power:</span>
+                            <span class="spec-value">50W each</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Quantity:</span>
+                            <span class="spec-value">20 lights</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Operation:</span>
+                            <span class="spec-value">12 hours daily</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Total Consumption:</span>
+                            <span class="spec-value">12kWh daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Data -->
+    <section id="performance" class="section">
+        <div class="container">
+            <h2>प्रदर्शन डेटा और सिमुलेशन</h2>
+            
+            <div class="simulation-controls">
+                <div class="control-group">
+                    <label class="form-label">Vehicle Speed (km/h): <span id="speed-value">80</span></label>
+                    <input type="range" class="control-slider" id="speed-slider" min="60" max="100" value="80">
+                </div>
+                <div class="control-group">
+                    <label class="form-label">Sun Intensity (%): <span id="sun-value">70</span></label>
+                    <input type="range" class="control-slider" id="sun-slider" min="0" max="100" value="70">
+                </div>
+                <div class="control-group">
+                    <label class="form-label">Active LED Lights: <span id="lights-value">20</span></label>
+                    <input type="range" class="control-slider" id="lights-slider" min="0" max="20" value="20">
+                </div>
+            </div>
+
+            <div class="performance-dashboard">
+                <div class="power-indicators">
+                    <div class="power-card wind-power">
+                        <h3>Wind Power</h3>
+                        <div class="power-value" id="wind-power">298W</div>
+                        <div class="power-source">4 Turbines</div>
+                    </div>
+                    <div class="power-card solar-power">
+                        <h3>Solar Power</h3>
+                        <div class="power-value" id="solar-power">1680W</div>
+                        <div class="power-source">6 Panels</div>
+                    </div>
+                    <div class="power-card total-power">
+                        <h3>Total Generation</h3>
+                        <div class="power-value" id="total-power">1978W</div>
+                        <div class="power-source">Combined</div>
+                    </div>
+                    <div class="power-card consumption">
+                        <h3>LED Consumption</h3>
+                        <div class="power-value" id="consumption">1000W</div>
+                        <div class="power-source">20 Lights</div>
+                    </div>
+                </div>
+
+                <div class="battery-status">
+                    <h3>बैटरी स्थिति</h3>
+                    <div class="battery-visual">
+                        <div class="battery-container">
+                            <div class="battery-level" id="battery-level"></div>
+                        </div>
+                        <div class="battery-info">
+                            <div class="battery-percentage" id="battery-percentage">85%</div>
+                            <div class="battery-status-text" id="battery-status">Charging</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>दैनिक उत्पादन पैटर्न</h3>
+                    <canvas id="daily-chart" height="300"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>मासिक ऊर्जा उत्पादन</h3>
+                    <canvas id="monthly-chart" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Flow -->
+    <section id="energy-flow" class="section">
+        <div class="container">
+            <h2>एनर्जी फ्लो डायग्राम</h2>
+            <div class="energy-flow-visual">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/f04be36c-6a24-43f1-938d-ed70ec52e992.png" alt="Technical schematic of hybrid power system components" class="flow-diagram">
+                <div class="flow-controls">
+                    <div class="scenario-buttons">
+                        <button class="btn btn--secondary scenario-btn active" data-scenario="day">Day Time</button>
+                        <button class="btn btn--secondary scenario-btn" data-scenario="night">Night Time</button>
+                        <button class="btn btn--secondary scenario-btn" data-scenario="cloudy">Cloudy</button>
+                    </div>
+                    <div class="flow-status">
+                        <div class="flow-indicator wind-flow">
+                            <span class="indicator-dot"></span>
+                            <span>Wind → Battery</span>
+                            <span class="flow-value" id="wind-flow-value">0.3kW</span>
+                        </div>
+                        <div class="flow-indicator solar-flow">
+                            <span class="indicator-dot"></span>
+                            <span>Solar → Battery</span>
+                            <span class="flow-value" id="solar-flow-value">1.7kW</span>
+                        </div>
+                        <div class="flow-indicator battery-flow">
+                            <span class="indicator-dot"></span>
+                            <span>Battery → Load</span>
+                            <span class="flow-value" id="battery-flow-value">1.0kW</span>
+                        </div>
+                        <div class="flow-indicator excess-flow">
+                            <span class="indicator-dot"></span>
+                            <span>Excess → Grid</span>
+                            <span class="flow-value" id="excess-flow-value">1.0kW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Analysis -->
+    <section id="cost-analysis" class="section">
+        <div class="container">
+            <h2>कॉस्ट एनालिसिस</h2>
+            
+            <div class="cost-overview">
+                <div class="cost-summary">
+                    <div class="cost-item">
+                        <h3>कुल निवेश</h3>
+                        <div class="cost-value">₹7,15,000</div>
+                        <div class="cost-detail">1 km stretch के लिए</div>
+                    </div>
+                    <div class="cost-item">
+                        <h3>वार्षिक बचत</h3>
+                        <div class="cost-value">₹47,466</div>
+                        <div class="cost-detail">Energy cost savings</div>
+                    </div>
+                    <div class="cost-item">
+                        <h3>Payback Period</h3>
+                        <div class="cost-value">19.2 वर्ष</div>
+                        <div class="cost-detail">ROI: 5.2% annually</div>
+                    </div>
+                    <div class="cost-item">
+                        <h3>सरकारी सब्सिडी</h3>
+                        <div class="cost-value">₹2,14,500</div>
+                        <div class="cost-detail">30% subsidy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-breakdown">
+                <div class="breakdown-chart">
+                    <h3>Cost Breakdown</h3>
+                    <canvas id="cost-pie-chart" height="400"></canvas>
+                </div>
+                <div class="breakdown-table">
+                    <h3>Component-wise Costs</h3>
+                    <table class="cost-table">
+                        <tr><td>Wind Turbines</td><td>₹2,00,000</td><td>28%</td></tr>
+                        <tr><td>Battery System</td><td>₹1,50,000</td><td>21%</td></tr>
+                        <tr><td>Solar Panels</td><td>₹1,20,000</td><td>17%</td></tr>
+                        <tr><td>Installation</td><td>₹1,00,000</td><td>14%</td></tr>
+                        <tr><td>LED Lights</td><td>₹60,000</td><td>8%</td></tr>
+                        <tr><td>Power Electronics</td><td>₹45,000</td><td>6%</td></tr>
+                        <tr><td>Project Management</td><td>₹40,000</td><td>6%</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="scaling-comparison">
+                <h3>Different Scale Comparison</h3>
+                <div class="scale-cards">
+                    <div class="scale-card">
+                        <h4>1 km Stretch</h4>
+                        <div class="scale-cost">₹7,15,000</div>
+                        <div class="scale-power">1.7kW Power</div>
+                        <div class="scale-lights">20 LED Lights</div>
+                    </div>
+                    <div class="scale-card">
+                        <h4>5 km Stretch</h4>
+                        <div class="scale-cost">₹30,00,000</div>
+                        <div class="scale-power">8.5kW Power</div>
+                        <div class="scale-lights">100 LED Lights</div>
+                    </div>
+                    <div class="scale-card">
+                        <h4>10 km Stretch</h4>
+                        <div class="scale-cost">₹55,00,000</div>
+                        <div class="scale-power">17kW Power</div>
+                        <div class="scale-lights">200 LED Lights</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation -->
+    <section id="implementation" class="section">
+        <div class="container">
+            <h2>इम्प्लीमेंटेशन टाइमलाइन</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Planning & Design</h3>
+                        <div class="timeline-duration">2 months</div>
+                        <p>Site survey, design optimization, permit applications</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Procurement</h3>
+                        <div class="timeline-duration">1 month</div>
+                        <p>Component ordering, quality checks, logistics</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Site Preparation</h3>
+                        <div class="timeline-duration">1 month</div>
+                        <p>Ground work, foundation laying, electrical infrastructure</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Installation</h3>
+                        <div class="timeline-duration">2 months</div>
+                        <p>Turbine & panel installation, electrical connections</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h3>Testing & Commissioning</h3>
+                        <div class="timeline-duration">1 month</div>
+                        <p>System testing, calibration, performance validation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="implementation-details">
+                <div class="requirements-card">
+                    <h3>Site Requirements</h3>
+                    <ul>
+                        <li>Highway with minimum 80 km/h traffic speed</li>
+                        <li>Minimum 30 feet clearance from road</li>
+                        <li>South-facing solar panel orientation</li>
+                        <li>Grid connectivity for excess energy</li>
+                        <li>Regular maintenance access</li>
+                    </ul>
+                </div>
+                
+                <div class="maintenance-card">
+                    <h3>Maintenance Schedule</h3>
+                    <div class="maintenance-item">
+                        <strong>Monthly:</strong> Visual inspection, cleaning
+                    </div>
+                    <div class="maintenance-item">
+                        <strong>Quarterly:</strong> Performance check, battery health
+                    </div>
+                    <div class="maintenance-item">
+                        <strong>Annual:</strong> Complete system audit, component replacement
+                    </div>
+                    <div class="maintenance-cost">
+                        <strong>Annual Maintenance Cost:</strong> ₹21,450
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <h3>Environmental Impact</h3>
+                    <div class="impact-stat">
+                        <strong>CO₂ Reduction:</strong> 8,484 kg annually
+                    </div>
+                    <div class="impact-stat">
+                        <strong>Equivalent Trees:</strong> 96 trees planted
+                    </div>
+                    <div class="impact-stat">
+                        <strong>Carbon Credits:</strong> ₹8,484 annually
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h3>Generate Report</h3>
+                <div class="report-buttons">
+                    <button class="btn btn--primary" id="generate-pdf">Download PDF Report</button>
+                    <button class="btn btn--secondary" id="export-data">Export Data (CSV)</button>
+                    <button class="btn btn--outline" id="print-report">Print Report</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+    <footer class="footer-wrapper">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>Our project "The Model of Wind Turbine and Solar Power System" showcases sustainable energy solutions designed by Rajan Kumar.</p>
+      </div>
+      <!-- <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Project Overview</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div> -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Udai Pratap Inter College</li>
+          <li>Principal: Dr. Ramesh Pratap Singh</li>
+          <li>Email: <a href="mailto:rajanproject3690@gmali.com">rajanproject3690@gmali.com</a></li>
+          <li>Phone: <a href="tel:+918777540268">+91 98765 4XXX</a></li>
+        </ul>
+      </div>
+      <!-- <div class="footer-section">
+        <h3>Follow</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">📱</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div> -->
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Rajan Kumar. Udai Pratap Inter College. All rights reserved.</p>
+        <p>Published: <span id="published-datetime"></span></p>
+      </div>
+    </footer>
+    <script>
+      // Dynamically set published date/time in the footer
+      document.addEventListener('DOMContentLoaded', function() {
+        var now = new Date();
+        var options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        var formatted = now.toLocaleString('en-GB', options).replace(',', '');
+        document.getElementById('published-datetime').textContent = formatted;
+      });
+    </script>
+</body>
+</html>
